@@ -1,0 +1,19 @@
+// ## {FUNCTION_NAME}
+// EXPLANATION OF FN 
+//
+//
+// ### Usage example
+// ```rust
+// 
+// 
+// ```
+// 
+// ### Arguments
+// 
+// ### Returns
+// 
+// ### Errors
+// 
+// ### Notes
+// 
+// 
