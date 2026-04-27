@@ -7,9 +7,12 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
--- telescope (fuzzy finder)
 vim.api.nvim_set_keymap('n', '<A-q>', ':Telescope find_files<CR>', {noremap = true, silent = true})
 
+vim.keymap.set('n', '<A-c>', function()
+  local cheatsheet_path = vim.fn.expand('~/documents/github/cheatsheet')
+  require('telescope.builtin').find_files({ cwd = cheatsheet_path })
+end)
 
 -- rust 
 vim.api.nvim_set_keymap('n', '<A-r>', ':!cargo run<CR>', {noremap = true, silent = true})

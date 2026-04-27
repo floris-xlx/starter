@@ -83,6 +83,34 @@ return {
   { "nvim-lua/plenary.nvim" },
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { 'nvim-telescope/telescope.nvim', tag = '0.1.6' },
-  { 'simrat39/rust-tools.nvim'}
+  { 'simrat39/rust-tools.nvim'},
+  {
+    "olimorris/codecompanion.nvim",
+    version = "^19.0.0",
+    config = function()
+      require("configs.codecompanion")
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "ravitemer/mcphub.nvim",
+    },
+  },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown", "codecompanion" }
+  },
+  {
+    "HakonHarnes/img-clip.nvim",
+    opts = {
+      filetypes = {
+        codecompanion = {
+          prompt_for_file_name = false,
+          template = "[Image]($FILE_PATH)",
+          use_absolute_path = true,
+        },
+      },
+    },
+  },
 
 }
